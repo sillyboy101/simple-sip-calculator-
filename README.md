@@ -1,28 +1,39 @@
-Interactive SIP Calculator (Matplotlib and ipywidgets)
+# Interactive SIP Calculator
 
-Estimate the future value of a Systematic Investment Plan (SIP) with live, interactive sliders. Built for Jupyter Notebook/JupyterLab using Matplotlib for visualization and ipywidgets for controls.
+An interactive Jupyter Notebook tool to estimate the future value of a **Systematic Investment Plan (SIP)** with variable interest rates.  
+Built with **Matplotlib** for visualization and **ipywidgets** for interactive controls.
 
-TL;DR: Tweak monthly SIP, duration, and rate range; watch the payoff curve update in real time.
+## Features
+
+- **Interactive sliders** to adjust:
+  - Monthly SIP amount
+  - Investment duration (years)
+  - Interest rate range
+- **Real-time plot updates** as parameters change
+- **Clear visualization** of investment growth
+- **Lightweight**: minimal dependencies, works in Jupyter Notebook/Lab
+- **Educational**: useful for learning SIP concepts and scenarios
+
+## How It Works
+
+The calculator uses the **future value of SIP formula** with monthly compounding:FV = P * [ ((1 + i)^n - 1) / i ] * (1 + i)
 
 
-✨ Features
+Where:
+- `P` = monthly investment
+- `i` = monthly interest rate (annual rate / 12)
+- `n` = total number of months
 
-Interactive Sliders: Monthly SIP, investment duration (years), and interest-rate range.
+The tool computes FV across a user-defined interest rate range and plots the results interactively.
 
-Real-time Plot Updates: Immediate feedback as you adjust parameters.
+## Installation
 
-Clear Visualization: See how returns evolve across rates.
+```bash
+# Create and activate virtual environment (recommended)
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 
-Lightweight: Minimal deps; runs smoothly in Jupyter.
+# Install dependencies
+pip install jupyterlab matplotlib ipywidgets numpy
 
-Educational: Great for students, finance enthusiasts, and quick prototyping.
 
-🧠 How It Works
-
-We compute SIP future value (FV) using monthly compounding. For a monthly contribution P, annual rate R (as decimal), and Y years:
-
-Monthly rate: i = R / 12
-
-Number of months: n = 12 * Y
-
-FV formula:FV = P * [ ((1 + i)^n - 1) / i ] * (1 + i)
